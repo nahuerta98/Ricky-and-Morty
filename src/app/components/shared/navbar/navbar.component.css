@@ -1,0 +1,11 @@
+.navbar-brand{
+    justify-content: center;
+}
+.logo{
+    width: 4rem;
+    height: 4rem;  
+    color: white;
+}
+.nav-title{
+    margin-left:0.5rem;
+}

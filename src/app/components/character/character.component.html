@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row mb-2">
+        <div class="col-md-2">
+            <button type="button" class="btn" style="width: 100%;" (click)="returnHome()">  <i class="fas fa-angle-double-left"></i> Back </button>
+        </div>
+    </div>
+    <div class="card text-white bg-dark ">
+        <div class="row g-0">
+            <div class="col-md-3">
+                <img [src]="singleCharacter.image" alt="Character Image">
+            </div>
+            <div class="col-md-9">
+                <div class="card-header"> <strong> ID: </strong> {{singleCharacter.id}} </div>  
+                <div class="card-body">
+                    <h1 class="card-title"> {{singleCharacter.name}} </h1>
+                    <div class="section-A">
+                     <span class="badge bg-dark text-white"> {{singleCharacter.status}}  </span> 
+                     <span class="badge bg-light text-dark"> {{singleCharacter.species}} </span> 
+                    </div>
+                    
+                    <div class="section-B">
+                    <p class="card-text mt-1"><small class="text-muted"> Gender: </small> {{singleCharacter.gender}} </p>
+                    <p class="card-text mt-1"><small class="text-muted"> Last known location: </small> {{singleCharacter.location.name}} </p>
+                    <p class="card-text mt-1"><small class="text-muted"> First seen in: </small> {{singleCharacter.episode[0]}} </p>
+                    <p class="card-text mt-1"><small class="text-muted"> Created: </small> {{singleCharacter.created}} </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-md-12">
+                <div class="card-header"> <strong> Episodes: </strong> </div>
+                <div class="card-body">
+                    <p class="card-text" *ngFor="let result of results"> 
+                        <i class="fas fa-angle-double-right"></i> {{result.name}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

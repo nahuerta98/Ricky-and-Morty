@@ -1,0 +1,30 @@
+<div class="card text-white bg-dark mb-3" *ngFor="let character of characters | paginate: { itemsPerPage:12, currentPage: page }">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="character.image" alt="Character Image" (click)="onCharacterClick( character)">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"> {{character.name}} </h5>
+        <span class="badge  bg-light text-dark"> {{character.status}} </span>
+        <span class="badge bg-light text-dark"> {{character.species}} </span>
+        <p class="card-text mt-1"><small class="text-muted">Last known location:</small> <br>
+          {{character.location.name}}</p>
+        <p class="card-text">
+          <small class="text-muted" >First seen in:</small> <br> 
+          {{character.episode[0]}}
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngFor="let episode of episodes">
+  <span> {{episode.episode}}</span>
+
+</div>
+
+<div class="container">
+  <pagination-controls (pageChange)="page = $event" previousLabel="Back" nextLabel="Next">
+  </pagination-controls>
+</div>
